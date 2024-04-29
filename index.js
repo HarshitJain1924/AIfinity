@@ -2,9 +2,9 @@ import express from "express";
 import pg from "pg";
 import bodyParser from "body-parser";
 import session from "express-session";
-import bcrypt from "bcrypt";
 import dotenv from 'dotenv';
 dotenv.config();
+
 
 const password = process.env.PASS;
 const port = process.env.PORT;
@@ -31,85 +31,174 @@ app.use(
   })
 );
 
-// Function to hash password
-const hashPassword = async (password) => {
-  try {
-    const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
-    return hashedPassword;
-  } catch (error) {
-    throw error;
-  }
-};
-
-// Error handler middleware
-const errorHandler = (err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
-};
-
-app.post("/signup", async (req, res, next) => {
-  try {
-    const hashedPassword = await hashPassword(req.body.pass);
-    await db.query(
-      "INSERT INTO user_data (username, email, password) VALUES ($1, $2, $3)",
-      [req.body.user, req.body.mail, hashedPassword]
-    );
-    res.render("index.ejs");
-  } catch (error) {
-    next(error);
-  }
+app.post("/signup", async (req, res) => {
+  await db.query(
+    "Insert into user_data (username, email,password) values($1,$2,$3)",
+    [req.body.user, req.body.mail, req.body.pass]
+  );
+  const userData = await db.query(
+    "select name, username from user_data where password = $1",
+    [req.body.pass]
+  );
+  res.render("index.ejs", {
+    Name: userData.rows[0].name,
+  });
 });
 
-app.post("/log", async (req, res, next) => {
-  try {
+app.get("/index", async (req, res) => {
+  res.render("index.ejs");
+});
+app.get("/courses", async (req, res) => {
+  res.render("courses.ejs");
+});
+app.get("/environment", async (req, res) => {
+  res.render("environment.ejs");
+});
+app.post("/profile", async (req, res) => {
+  const userData = await db.query("select * from user_data");
+  console.log(userData);
+  if (userData.rows.length > 0) {
+    const { nm, mal, phn, mob, add, web, git, twi, inst, fb, usr, ps, img } =
+      userData.rows[0];
+    res.render("profile.ejs", {
+      Name: nm,
+      Mail: mal,
+      phone: phn,
+      Mobile: mob,
+      Address: add,
+      website: web,
+      Github: git,
+      twitter: twi,
+      insta: inst,
+      facebook: fb,
+      user: usr,
+      image: img,
+    });
+  } else {
+    render("index.js");
+  }
+});
+app.post("/home", async(req,res) => {
+  const userData = await db.query("select name from user_data where password = $1",[req.session.pass]);
+  res.render("index.ejs",{
+    Name:userData.rows[0].name,
+  })
+})
+app.post("/log", async (req, res) => {
     const pass = req.body.pass;
-    const hashedPassword = await hashPassword(pass);
-    req.session.pass = hashedPassword;
+    req.session.pass = pass;
     const userData = await db.query(
-      "SELECT name, username FROM user_data WHERE password = $1",
-      [hashedPassword]
+      "select name, username from user_data where password = $1",
+      [req.body.pass]
     );
     res.render("index.ejs", {
       Name: userData.rows[0].name,
     });
-  } catch (error) {
-    next(error);
+  });
+
+
+app.get("/profile", async (req, res) => {
+  const userData = await db.query("select * from user_data where password=$1",[req.session.pass]);
+  console.log(req.session.pass);
+  console.log(userData.rows[0]);
+  if (userData.rows.length > 0) {
+    const nm = userData.rows[0].name;
+    const mal = userData.rows[0].email;
+    const phn = userData.rows[0].phone;
+    const mob = userData.rows[0].mob;
+    const add = userData.rows[0].address;
+    const web = userData.rows[0].web;
+    const git = userData.rows[0].github;
+    const twi = userData.rows[0].twitter;
+    const inst = userData.rows[0].instagram;
+    const fb = userData.rows[0].facebook;
+    const usr = userData.rows[0].username;
+    const ps = userData.rows[0].password;
+    const img = userData.rows[0].image;
+
+    console.log(nm + " " + mal);
+    res.render("profile.ejs", {
+      Name: nm,
+      Mail: mal,
+      phone: phn,
+      Mobile: mob,
+      Address: add,
+      website: web,
+      Github: git,
+      twitter: twi,
+      insta: inst,
+      facebook: fb,
+      user: usr,
+      image: img,
+    });
+  } else {
+    res.render("index.ejs");
   }
 });
 
-app.get("/profile", async (req, res, next) => {
-  try {
-    const userData = await db.query(
-      "SELECT * FROM user_data WHERE password = $1",
-      [req.session.pass]
-    );
-    if (userData.rows.length > 0) {
-      const { name, email, phone, mob, address, web, github, twitter, instagram, facebook, username, password, image } = userData.rows[0];
-      res.render("profile.ejs", {
-        Name: name,
-        Mail: email,
-        phone: phone,
-        Mobile: mob,
-        Address: address,
-        website: web,
-        Github: github,
-        twitter: twitter,
-        insta: instagram,
-        facebook: facebook,
-        user: username,
-        image: image,
-      });
-    } else {
-      res.render("index.ejs");
-    }
-  } catch (error) {
-    next(error);
+app.post("/enviornment", async(req,res) => {
+  const userData = await db.query('select name from user_data where password = $1',[req.session.pass]);
+  if(userData.rows.length>0){
+    res.render("environment.ejs",{
+      Name: userData.rows[0].name,
+    })
+  }else{
+  res.render("environment.ejs");
   }
 });
 
-app.use(errorHandler);
+app.get("/contact", async (req, res) => {
+  const userData = await db.query('select name from user_data where password = $1',[req.session.pass]);
+  if(userData.rows.length>0){
+    res.render("contact.ejs",{
+      Name: userData.rows[0].name,
+    })
+  }else{
+  res.render("contact.ejs");
+  }
+});
+app.get("/login", (req, res) => {
+  res.render("login.ejs");
+});
 
+app.get("/thankyou", (req, res) => {
+  res.render("thankyou.ejs");
+}); 
+app.get("/resource", async (req,res)=>{
+  const userData = await db.query("select name from user_data where password = $1",[req.session.pass]);
+  if(userData.rows.length>0){
+    res.render('resourse.ejs',{
+      Name: userData.rows[0].name,
+    });
+  }else{
+    res.render('resourse.ejs');
+  }
+});
+
+app.post('/submit-score', (req, res) => {
+  console.log('Score received:', req.body.score);
+  // Process score here (e.g., save to database)
+});
+
+app.get("/learn", async (req,res)=>{
+  const userData = await db.query("select name from user_data where password = $1",[req.session.pass]);
+  if(userData.rows.length>0){
+    res.render('learn.ejs',{
+      Name: userData.rows[0].name,
+    });
+  }else{
+    res.render('resourse.ejs');
+  }
+});
+app.get("/payment",(req,res) => {
+  res.render("payment.ejs");
+});
+app.get('/thankyou',async(req,res)=>{
+  
+})
+app.get("/", async (req, res) => {
+  res.render("index.ejs");
+});
 app.listen(2000, () => {
   console.log("Server started on port 2000");
 });
