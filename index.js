@@ -7,6 +7,7 @@ dotenv.config();
 
 
 const password = process.env.PASS;
+const port = process.env.PORT;
 const app = express();
 
 const db = new pg.Client({
@@ -14,7 +15,7 @@ const db = new pg.Client({
   host: "localhost",
   database: "Affinity",
   password: password,
-  port: 5432,
+  port: port,
 });
 db.connect();
 
