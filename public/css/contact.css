@@ -1,0 +1,240 @@
+.contact__container{
+    background: var(--color-bg1);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 4rem;
+    height: 30rem;
+    margin: 7rem auto;
+    border-radius: 1rem;
+    
+}
+/*============ASIDE===========*/
+
+.contact__aside{
+    background: var(--color-primary);
+    padding: 3rem;
+    border-radius: 1rem;
+    position: relative;
+    bottom: 10rem;
+
+}
+
+.aside__image{
+    width: 12rem;
+    margin-bottom: 2rem;
+}
+
+.contact__aside h2{
+    text-align: left;
+}
+
+.contact__aside p{
+    margin-bottom: 2rem;
+}
+
+.contact__details li{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact__socials{
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 3rem;
+}
+
+.contact__socials a{
+    background: var(--color-bg2);
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 15px;
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+.contact__socials a:hover{
+    background: transparent;
+}
+
+/*====================FORM===================*/
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-right:4rem;
+}
+
+.form__name{
+    display: flex;
+    gap: 1.2rem;
+}
+
+.contact__form input[type="text"]{
+    width:50%;
+}
+
+input,textarea{
+    width: 100%;
+    padding: 1rem;
+    background: var(--color-bg);
+    color: var(--color-white);
+}
+
+.contact__form .btn{
+    width: max-content;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/*===============Media Queries(TABLETS)==================*/
+@media screen and (max-width:1024px){
+
+    .contact{
+        padding-bottom:0 ;
+    }
+    .contact__container{
+        gap: 1.5rem;
+        margin-top: 3rem;
+        height: auto;
+        padding: 1.5rem;
+
+    }
+    .contact__aside{
+        width: auto;
+        padding: 1.5rem;
+        bottom: 0;
+    }
+    .contact__form{
+        align-self: center;
+        margin-right: 1.5rem;
+    }
+}
+
+/*===============Media Queries(PHONES)==================*/
+@media screen and (max-width:1024px){
+    .contact__container{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .contact__form{
+        margin: 0 1.5rem 3rem;
+    }
+    .form__name{
+        flex-direction: column;
+    }
+    .form__name input[type="text"]{
+        width: 100%;
+    }
+}
+
+.space{
+    margin-top:120px;
+}
+
+:root{
+    --color-primary:#EFF1DB;
+    --color-success:#00bf8e;
+    --color-warning:#f7c94b;
+    --color-danger:#f75842;
+    --color-danger-variant:rgba(247,88,66,0.4);
+    --color-white:#2c0e2c;
+    --color-light:rgba(255,255,255,0.7);
+    --color-black:#000000;
+    --color-bg:#BBE7FE;
+    --color-bg1:#D3B5E5;
+    --color-bg2:#FFD4DB;
+
+    --container-width-lg:80%;
+    --container-width-md:90%;
+    --container-width-sm:94%;
+
+    --transition:all 400ms ease;
+}
+
+
+.container1{
+    width: var(--container-width-lg);
+    margin:0 auto;
+}
+
+/* =======================Media Queries(Tablets)==================== */
+@media screen and (max-width:1024px){
+    .container{
+        width: var(--container-width-md);
+    }
+}
+
+/* ===================Media Queries (Phones)===================== */
+@media screen and (max-width: 600px){
+    .container{
+        width: var(--container-width-sm);
+    }
+}   
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.7;
+    color: var(--color-white);
+    background-color: var(--color-bg);
+}
+
+.contact{
+    padding: 6rem 0;
+}
+.contact h2{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    transform: translateX(50%);
+}
+
+.btn1{
+    display:inline-block;
+    background: var(--color-white);
+    color:var(--color-black);
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    font-weight: 500;
+    transition: var(--transition);
+
+}
+
+.btn1:hover{
+    background-color: transparent;
+    color:var(--color-white);
+    border-color:var(--color-white);
+
+}
+
+.btn-primary1{
+    background: var(--color-danger);
+    color:var(--color-white) ;
+}
