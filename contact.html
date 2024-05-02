@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>EduWeb - The Best Program to Enroll for Exchange</title>
+  <meta name="title" content="EduWeb - The Best Program to Enroll for Exchange">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/contact.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+	<!--  *****   Link To Font Awsome Icons   *****  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+      <!-- ICONSCOUT CDN -->
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">  
+      <!-- Google Font  -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" width="110" height="50" alt="EduWeb logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.png" width="110" height="50" alt="EduWeb logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="./index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="./index.html" class="navbar-link" data-nav-link>About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="./courses.html" class="navbar-link" data-nav-link>Courses</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="./contact.html" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="./login.html" class="btn has-before">
+              <span class="span">Try for free</span>
+    
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+        <div class="img-name-container">
+          <img src="assets/images/user.png" class="user-pic" onclick="toggleMenu()">
+          <p class="img-container-text">James</p>
+        </div>
+        <div class="sub-menu-wrap" id="subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src="assets/images/user.png">
+              <h2>James</h2>
+            </div>
+            <hr>
+            <a href="profile.html" class="sub-menu-link">
+              <img src="assets/images/profile.png">
+              <p>Edit Profile</p>
+              <span>></span>
+            </a>
+            <a href="#profile" class="sub-menu-link">
+              <img src="assets/images/setting.png">
+              <p>Settings & Privacy</p>
+              <span>></span>
+            </a>
+            <a href="#profile" class="sub-menu-link">
+              <img src="assets/images/help.png">
+              <p>Help & Support</p>
+              <span>></span>
+            </a>
+            <a href="#profile" class="sub-menu-link">
+              <img src="assets/images/logout.png">
+              <p>Logout</p>
+              <span>></span>
+            </a>
+          </div>
+        </div>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+  <div class="space"></div>
+  <section class="contact">
+      <div class="container1 contact__container">
+          <aside class="contact__aside">
+              <div class="aside__image">
+                  <img src="./assets/images/contactus.webp" class="contact-img" alt="">
+              </div>
+              <h2>Contact Us</h2>
+              <p>
+                  We value your feedback. If you have any questions, suggestions, or concerns, please feel free to reach out to us. We're here to help!
+              </p>
+              <ul class="contact__details">
+                  <li>
+                      <i class="uil uil-phone-times"></i>
+                      <h5>+91 00000 00000</h5>
+                  </li>
+  
+                  <li>
+                      <i class="uil uil-envelope"></i>
+                      <h5>ipps@gmail.com</h5>
+                  </li>
+  
+                  <li>
+                      <i class="uil uil-location-point"></i>
+                      <h5>Motihari,Bihar</h5>
+                  </li>
+              </ul>
+  
+              <ul class="contact__socials">
+                  <li><a href="https://www.facebook.com/IPPSmth/"><i class="uil uil-facebook-f"></i></a></li>
+                  <li><a href="instagram.com"><i class="uil uil-instagram-alt"></i></a></li>
+                  <li><a href="twitter.com"><i class="uil uil-twitter"></i></a></li>
+                  <li><a href="linkedin.com"><i class="uil uil-linkedin-alt"></i></a></li>
+              </ul>
+          </aside>
+  
+          <form action="https://formspree.io/f/mleqaara" method="POST" class="contact__form">
+              <div class="form__name">
+                  <input type="text" name="First Name" placeholder="First Name" required>
+                  <input type="text" name="Last Name" placeholder="Last Name" required>
+              </div>
+  
+              <input type="email" name="Email Address" id="" placeholder="Your Email Address" required>
+              <textarea name="Message" rows="7" placeholder="Message" required></textarea>
+              <button type="submit" class="btn1 btn-primary1">Send Message</button>
+          </form>
+      </div>
+</section>
+  <!-- 
+    - #FOOTER
+  -->
+  <div class="space"></div>
+  <div class="space"></div>
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')" id="contact">
+
+    <div class="footer-top section">
+      <div class="container grid-list">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-light.svg" width="162" height="50" alt="EduWeb logo">
+          </a>
+
+          <p class="footer-brand-text">
+            Lorem ipsum dolor amet consecto adi pisicing elit sed eiusm tempor incidid unt labore dolore.
+          </p>
+
+          <div class="wrapper">
+            <span class="span">Add:</span>
+
+            <address class="address">70-80 Upper St Norwich NR2</address>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Call:</span>
+
+            <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Email:</span>
+
+            <a href="mailto:info@eduweb.com" class="footer-link">info@eduweb.com</a>
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Online Platform</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Courses</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Instructor</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Events</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Instructor Profile</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Purchase Guide</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Gallery</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">News & Articles</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">FAQ's</a>
+          </li>
+
+          <li>
+            <a href="./login.html" class="footer-link">Sign In/Registration</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Coming Soon</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Contacts</p>
+
+          <p class="footer-list-text">
+            Enter your email address to register to our newsletter subscription
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+
+            <button type="submit" class="btn has-before">
+              <span class="span">Subscribe</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          Copyright 2022 All Rights Reserved by <a href="#" class="copyright-link">adsf</a>
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+    <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    </body>
+    </html>    

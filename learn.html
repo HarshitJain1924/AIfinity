@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn and Earn</title>
+    <link rel="stylesheet" href="./assets/css/learn.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet">
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  
+      <!--  *****   Link To Font Awsome Icons   *****  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+</head>
+<body>
+    <header class="header" data-header>
+        <div class="container">
+    
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.png" width="110" height="50" alt="EduWeb logo">
+          </a>
+    
+          <nav class="navbar" data-navbar>
+    
+            <div class="wrapper">
+              <a href="./index.html" class="logo">
+                <img src="./assets/images/logo.png" width="110" height="50" alt="EduWeb logo">
+              </a>
+    
+              <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+    
+            <ul class="navbar-list">
+    
+              <li class="navbar-item">
+                <a href="./index.html" class="navbar-link" data-nav-link>Home</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#about" class="navbar-link" data-nav-link>About</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#courses" class="navbar-link" data-nav-link>Courses</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="./login.html" class="btn has-before">
+                  <span class="span">Try for free</span>
+        
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </li>
+    
+            </ul>
+    
+          </nav>
+    
+          <div class="header-actions">
+            <div class="img-name-container">
+              <img src="assets/images/user.png" class="user-pic" onclick="toggleMenu()">
+              <p class="img-container-text">James</p>
+            </div>
+            <div class="sub-menu-wrap" id="subMenu">
+              <div class="sub-menu">
+                <div class="user-info">
+                  <img src="assets/images/user.png">
+                  <h2>James</h2>(<span id="subMenuPoints">0</span>points)
+                </div>
+                <hr>
+                <a href="profile.html" class="sub-menu-link">
+                  <img src="assets/images/profile.png">
+                  <p>Edit Profile</p>
+                  <span>></span>
+                </a>
+                <a href="#profile" class="sub-menu-link">
+                  <img src="assets/images/setting.png">
+                  <p>Settings & Privacy</p>
+                  <span>></span>
+                </a>
+                <a href="#profile" class="sub-menu-link">
+                  <img src="assets/images/help.png">
+                  <p>Help & Support</p>
+                  <span>></span>
+                </a>
+                <a href="#profile" class="sub-menu-link">
+                  <img src="assets/images/logout.png">
+                  <p>Logout</p>
+                  <span>></span>
+                </a>
+              </div>
+            </div>
+    
+            <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+              <span class="line line-1"></span>
+              <span class="line line-2"></span>
+              <span class="line line-3"></span>
+            </button>
+    
+          </div>
+    
+          <div class="overlay" data-nav-toggler data-overlay></div>
+    
+        </div>
+      </header>
+      <div class="space"></div>
+    <div class="container1">
+        <h1>Learn and Earn</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="audioFile">Upload Audio:</label>
+            <input type="file" id="audioFile" accept="audio/*"><br><br>
+            
+            <label for="pdfFile">Upload PDF:</label>
+            <input type="file" id="pdfFile" accept=".pdf"><br><br>
+            
+            <button type="submit" class="button1">Upload</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <div id="quiz">
+        <h2>Quiz</h2>
+        <div id="question"></div>
+        <div id="options"></div>
+        <div id="result"></div>
+    </div>
+    <script src="./assets/js/learn.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
