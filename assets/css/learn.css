@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container1 {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 4px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+
+.button1 {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#message {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#quiz {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border: 4px solid #ddd;
+}
+
+
+
+/* Question and Options Styles */
+.question-container {
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.option-label {
+    display: block;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.option-label:hover {
+    background-color: #e9e9e9;
+}
+
+.option-label.selected {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.option-input {
+    display: none;
+}
+
+/* Submit Button Styles */
+#submit {
+    background-color: #e30000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#submit:hover {
+    background-color: #13d8d2;
+}
+
+/* Result Styles */
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+.space{
+    margin-top: 150px;
+}
+
+#subMenuPoints {
+    font-weight: bold; /* Make the text bold */
+    color: #007bff; /* Set text color to blue */
+    margin-left: 5px; /* Add a small margin on the left side */
+}
+
